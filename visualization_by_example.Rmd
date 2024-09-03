@@ -43,36 +43,73 @@ suppressPackageStartupMessages(library(palmerpenguins))
 
 ## Exercise 1
 
+i. 344 Rows and 8 total columns
 
+ii. It is an observation of penguin and their features
+
+iii. Species, Island, and Sex
+
+iv. bill length in mm, bill depth in mm, flipper length in mm, and body mass in g
+
+v. Year
+
+vi. Gentoo, Chinstrap, and Adelie
 
 
 ## Exercise 2
 
+```{r}
+ qplot(x = flipper_length_mm, data = penguins)
+```
 
+i. x-axis
+
+ii. The number of penguins with a flipper length
+
+iii. The graph is bimodal with 2 or 3 peaks, more information is required to give a definite mode
 
 
 ## Exercise 3
 
+i.
+```{r}
+ qplot(x = flipper_length_mm, data = penguins, bins=15)
+```
 
-
+ii.
+```{r}
+ qplot(x = flipper_length_mm,binwidth=1, data = penguins)
+```
 
 ## Exercise 4
 
+```{r}
+qplot(x = flipper_length_mm, y = body_mass_g, data = penguins)
+```
 
+i. Body mass
 
+ii. There is a non-linear positive relationship in the scatter plot
 
 ## Exercise 5
 
-
+```{r}
+qplot(x = bill_length_mm, y = body_mass_g, data = penguins)
+```
+The correlation in this scatter plot looks weaker then the plot of the last
 
 
 ## Exercise 6
 
-
-
+```{r}
+qplot(x = bill_length_mm, y = body_mass_g, data = penguins, geom = c("point", "smooth"), method = "lm")
+```
+I feel that this graph is communicated batter without the trend line because there is less data points the further up you go on the x-axis. The data is much more gather towards the center of the graph so the trend line follows the outliers to much in this case.
 
 ## Exercise 7
 
-
-
+```{r}
+qplot(x = bill_length_mm, y = body_mass_g, data = penguins, geom = c("point", "smooth"), color = species, method = "lm")
+```
+Adding color helps focus the previously very scattered graph. Now that each species has their own trend line it helps contextualize the previous outliers and groupings into making more sence.
 
